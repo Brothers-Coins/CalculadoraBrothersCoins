@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="shortcut icon" href="brother_coins_logo_512_512.png">
     <title>Calculadora Brothers Coins</title>
 </head>
 <body>
     <div>
-        <label> Quantidade de Tibia Coins
-            <input type="range" name="" value="0" min="0" max="20000" step="25" onmousemove="rangeSlide(this.value)">
+        <span id="rangeValue" class="text">250 TC</span>
+        <button id="buttonLeft" class="button"></button>
+        <label>
+            <input type="range" class="range" name="" value="250" min="0" max="20000"
+            step="25" onchange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)">
         </label>
-        <span id="rangeValue">0</span>
+        <button id="buttonRight" class="button"></button>
+        <span id="moneyValue" class="text">R$ 52</span>
     </div>
     <script src="src.js"></script>
 </body>

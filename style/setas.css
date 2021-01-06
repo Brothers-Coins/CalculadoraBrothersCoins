@@ -1,0 +1,62 @@
+.seta-5 {
+    padding: 10px 20px;
+    background: #c00;
+    border-radius: 50px;
+    float: left;
+    transition: all 0.2 linear;
+    opacity: 1
+}
+
+.seta-5 i {
+    border-left: 10px solid #FFF;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    float: left;
+    margin: 0 10px;
+}
+
+.seta-5:hover {
+    opacity: 0.7;
+    box-shadow: 0 0 4px #600
+}
+
+.seta-6 {
+    padding: 15px 20px;
+    background: #069;
+    border-radius: 50px;
+    float: left;
+    margin: 0 10px;
+}
+
+.seta-6 i {
+    border-right: 20px solid #fff;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    float: left;
+    transition: all ease-out 0.2s;
+}
+
+.seta-6:hover i {
+    transform: rotate(360deg) scale(1.2);
+}
+
+.seta-7 {
+    padding: 15px 20px;
+    border: 6px solid #ccc;
+    border-radius: 50px;
+    float: left;
+    margin: 0 10px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+    transition: all linear 0.2s;
+}
+
+.seta-7 i {
+    border-left: 20px solid #ccc;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    float: left;
+}
+
+.seta-7:hover {
+    transform: rotateX(180deg)
+}
