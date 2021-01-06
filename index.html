@@ -10,12 +10,12 @@
 <body>
     <div>
         <span id="rangeValue" class="text">250 TC</span>
-        <button id="buttonLeft" class="button"></button>
+        <button id="buttonLeft" class="button" onclick="buttonLeftClick()"></button>
         <label>
-            <input type="range" class="range" name="" value="250" min="0" max="20000"
-            step="25" onchange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)">
+            <input id="slider" type="range" class="range" value="250" min="0" max="20000"
+            step="25" onchange="rangeSlide()" onmousemove="rangeSlide()">
         </label>
-        <button id="buttonRight" class="button"></button>
+        <button id="buttonRight" class="button" onclick="buttonRightClick()" on></button>
         <span id="moneyValue" class="text">R$ 52</span>
     </div>
     <script src="src.js"></script>
