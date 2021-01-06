@@ -6,17 +6,17 @@
     color: transparent;
     margin: 0 20px 0 20px;
     border-radius: 5%;
-    border-top: 25px solid transparent;
-    border-bottom: 25px solid transparent;
-    border-right: 25px solid var(--roxo_bc);
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid var(--roxo_bc);
     border-left: 0;
 }
 
 .button:hover {
     cursor: pointer;
-    border-top: 25px solid transparent;
-    border-bottom: 25px solid transparent;
-    border-right: 25px solid var(--roxo_roxo);
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid var(--roxo_roxo);
 }
 
 #buttonRight {
