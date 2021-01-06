@@ -18,10 +18,32 @@ function setMoneyValue(moneyValue) {
     document.getElementById('moneyValue').innerHTML = `R$ ${moneyValue},00`
 }
 
+function chooseTcImage(value) {
+    if (value < 200) {
+        return 1
+    } else if (value < 1000) {
+        return 2
+    } else if (value < 2500) {
+        return 3
+    } else if (value < 5000) {
+        return 4
+    } else if (value < 15000) {
+        return 5
+    }
+    return 6
+}
+
+function setImage(value) {
+    let tcImage
+    tcImage = chooseTcImage(value);
+    document.getElementById('tcImage').src = 'imgs/tcs/tibia-coins'+tcImage+'.png'
+}
+
 function setFields(value) {
     const moneyValue = getMoneyValue(value)
     setTcValue(value);
     setMoneyValue(moneyValue);
+    setImage(value)
     console.log(`Tc value: ${value}\nMoney value: ${moneyValue}`)
 }
 
@@ -31,11 +53,17 @@ function rangeSlide() {
 }
 
 function buttonLeftClick() {
-    const value = getValueSlider() - 25
+    let value = getValueSlider() - 25
+    if (value < 0) {
+        value = '0'
+    }
     setFields(value)
 }
 
 function buttonRightClick() {
-    const value = getValueSlider() + 25
+    let value = getValueSlider() + 25
+    if (value > 20000) {
+        value = '20000'
+    }
     setFields(value)
 }

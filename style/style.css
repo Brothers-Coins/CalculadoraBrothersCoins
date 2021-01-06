@@ -34,6 +34,18 @@ div {
     font-size: 4em;
 }
 
+#tibiaCoinsValue {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#tibiaCoinsRanger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .range {
     width: 400px;
     height: 15px;
@@ -59,4 +71,5 @@ div {
 .button {
     height: 30px;
     width: 30px;
+    margin: 0 20px 0 20px;
 }
