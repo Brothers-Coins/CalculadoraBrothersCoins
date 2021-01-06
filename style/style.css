@@ -1,4 +1,5 @@
 @import "colors.css";
+@import "setas.css";
 
 * {
     margin: 0;
@@ -66,22 +67,4 @@ div {
     cursor: pointer;
     border: 2px solid var(--lilas);
     box-shadow: -407px 0 0 400px var(--roxo_bc);
-}
-
-.button {
-    width: 0;
-    height: 0;
-    margin: 0 20px 0 20px;
-}
-
-#buttonLeft {
-    border-top: 25px solid transparent;
-    border-bottom: 25px solid transparent;
-    border-right: 25px solid var(--roxo_bc);
-}
-
-#buttonRight {
-    border-top: 25px solid transparent;
-    border-bottom: 25px solid transparent;
-    border-left: 25px solid var(--roxo_bc);
 }

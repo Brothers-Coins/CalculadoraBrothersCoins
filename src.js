@@ -27,7 +27,7 @@ function chooseTcImage(value) {
         return 3
     } else if (value < 5000) {
         return 4
-    } else if (value < 15000) {
+    } else if (value < 12000) {
         return 5
     }
     return 6
@@ -54,16 +54,16 @@ function rangeSlide() {
 
 function buttonLeftClick() {
     let value = getValueSlider() - 25
-    if (value < 0) {
-        value = '0'
+    if (value < 25) {
+        value = '25'
     }
     setFields(value)
 }
 
 function buttonRightClick() {
     let value = getValueSlider() + 25
-    if (value > 20000) {
-        value = '20000'
+    if (value > 15000) {
+        value = '15000'
     }
     setFields(value)
 }
