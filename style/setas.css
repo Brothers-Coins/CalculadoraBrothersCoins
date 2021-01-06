@@ -1,17 +1,24 @@
 .button {
     width: 0;
     height: 0;
+    outline: none;
+    background-color: transparent;
+    color: transparent;
     margin: 0 20px 0 20px;
-}
-
-#buttonLeft {
+    border-radius: 5%;
     border-top: 25px solid transparent;
     border-bottom: 25px solid transparent;
     border-right: 25px solid var(--roxo_bc);
+    border-left: 0;
+}
+
+.button:hover {
+    cursor: pointer;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-right: 25px solid var(--roxo_roxo);
 }
 
 #buttonRight {
-    border-top: 25px solid transparent;
-    border-bottom: 25px solid transparent;
-    border-left: 25px solid var(--roxo_bc);
+    transform: rotate(180deg)
 }
