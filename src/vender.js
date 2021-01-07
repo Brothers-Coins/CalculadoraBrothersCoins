@@ -1,12 +1,12 @@
-const valor250Tc = 52
-const valor25Tc = 6
+const valor250Tc = 48
+const valor25Tc = 4
 
 function getValueSlider() {
     return parseInt(document.getElementById('slider').value, 10)
 }
 
 function getMoneyValue(value) {
-    return valor250Tc * Math.floor(value / 250) + valor25Tc * Math.floor((value % 250) / 25)
+    return value >= 250 ? (valor250Tc * (value / 250)).toFixed(2).replace('.', ',') : valor25Tc * (value / 25)
 }
 
 function setTcValue(valueSlider) {
@@ -15,35 +15,14 @@ function setTcValue(valueSlider) {
 }
 
 function setMoneyValue(moneyValue) {
-    document.getElementById('moneyValue').innerHTML = `R$ ${moneyValue},00`
-}
-
-function chooseTcImage(value) {
-    if (value < 200) {
-        return 1
-    } else if (value < 1000) {
-        return 2
-    } else if (value < 2500) {
-        return 3
-    } else if (value < 5000) {
-        return 4
-    } else if (value < 12000) {
-        return 5
-    }
-    return 6
-}
-
-function setImage(value) {
-    let tcImage
-    tcImage = chooseTcImage(value);
-    document.getElementById('tcImage').src = 'imgs/tcs/tibia-coins'+tcImage+'.png'
+    console.log(moneyValue)
+    document.getElementById('moneyValue').innerHTML = moneyValue.indexOf(',') === -1 ?`R$ ${moneyValue},00` : `R$ ${moneyValue}`
 }
 
 function setFields(value) {
     const moneyValue = getMoneyValue(value)
     setTcValue(value);
-    setMoneyValue(moneyValue);
-    setImage(value)
+    setMoneyValue(moneyValue.toString());
     console.log(`Tc value: ${value}\nMoney value: ${moneyValue}`)
 }
 

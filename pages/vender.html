@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="shortcut icon" href="../imgs/brother_coins_logo_512_512.png">
+    <title>Calculadora Brothers Coins - VENDER</title>
+</head>
+<body>
+    <div>
+        <span id="rangeValue" class="text">250 TC</span>
+        <div id="tibiaCoinsRanger">
+            <button id="buttonLeft" class="button" onclick="buttonLeftClick()"></button>
+            <label>
+                <input id="slider" type="range" class="range" value="250" min="25" max="15000"
+                       step="25" onchange="rangeSlide()" oninput="rangeSlide()">
+            </label>
+            <button id="buttonRight" class="button" onclick="buttonRightClick()"></button>
+        </div>
+        <span id="moneyValue" class="text">R$ 48,00</span>
+    </div>
+    <script src="../src/vender.js"></script>
+</body>
+</html>
