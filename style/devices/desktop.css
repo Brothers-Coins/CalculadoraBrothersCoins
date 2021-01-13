@@ -1,4 +1,4 @@
-@media (min-width: 1025px) {
+@media (min-width: 800px) {
     #rangeValue {
         font-size: 10em;
     }
@@ -7,7 +7,5 @@
     }
     .range {
         width: 620px;
-        height: 15px;
-        border-radius: 15px;
     }
 }
