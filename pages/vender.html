@@ -11,12 +11,12 @@
     <div>
         <span id="rangeValue" class="text">250 TC</span>
         <div id="tibiaCoinsRanger">
-            <button id="buttonLeft" class="button" onclick="buttonLeftClick()"></button>
+            <button id="buttonLeft" class="button" onmousedown="mouseDown('left')" onmouseup="mouseUp()" onclick="buttonLeftClick()"></button>
             <label>
                 <input id="slider" type="range" class="range" value="250" min="25" max="15000"
                        step="25" onchange="rangeSlide()" oninput="rangeSlide()">
             </label>
-            <button id="buttonRight" class="button" onclick="buttonRightClick()"></button>
+            <button id="buttonRight" class="button" onmousedown="mouseDown('right')" onmouseup="mouseUp()" onclick="buttonRightClick()"></button>
         </div>
         <span id="moneyValue" class="text">R$ 48,00</span>
     </div>

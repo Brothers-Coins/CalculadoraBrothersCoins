@@ -1,5 +1,7 @@
 const valor250Tc = 52
 const valor25Tc = 6
+const tempo = 200
+let timer
 
 function getValueSlider() {
     return parseInt(document.getElementById('slider').value, 10)
@@ -67,3 +69,14 @@ function buttonRightClick() {
     }
     setFields(value)
 }
+
+
+const mouseDown = (type) => {
+    timer = setInterval(function(){
+        type === 'right' ? buttonRightClick() : buttonLeftClick()
+    }, tempo);
+};
+
+const mouseUp = () => {
+    clearTimeout(timer);
+};

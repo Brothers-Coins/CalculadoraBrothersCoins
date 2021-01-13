@@ -1,0 +1,13 @@
+@media (min-width: 1025px) {
+    #rangeValue {
+        font-size: 10em;
+    }
+    #moneyValue {
+        font-size: 6.67em;
+    }
+    .range {
+        width: 620px;
+        height: 15px;
+        border-radius: 15px;
+    }
+}

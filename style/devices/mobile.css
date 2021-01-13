@@ -1,0 +1,13 @@
+#rangeValue {
+    font-size: 5em;
+}
+
+#moneyValue {
+    font-size: 3.7em;
+}
+
+.range {
+    width: 300px;
+    height: 10px;
+    border-radius: 15px;
+}
