@@ -1,4 +1,4 @@
-.button {
+.arrow {
     width: 0;
     height: 0;
     outline: none;
@@ -12,13 +12,13 @@
     border-left: 0;
 }
 
-.button:hover {
+.arrow:hover {
     cursor: pointer;
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
     border-right: 20px solid var(--roxo_roxo);
 }
 
-#buttonRight {
+#arrowRight {
     transform: rotate(180deg)
 }

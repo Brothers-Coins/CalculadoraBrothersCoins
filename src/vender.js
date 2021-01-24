@@ -33,7 +33,7 @@ function rangeSlide() {
     setFields(valueSlider);
 }
 
-function buttonLeftClick() {
+function arrowLeftClick() {
     let value = getValueSlider() - 25
     if (value < 25) {
         value = '25'
@@ -41,7 +41,7 @@ function buttonLeftClick() {
     setFields(value)
 }
 
-function buttonRightClick() {
+function arrowRightClick() {
     let value = getValueSlider() + 25
     if (value > 15000) {
         value = '15000'
@@ -51,7 +51,7 @@ function buttonRightClick() {
 
 const mouseDown = (type) => {
     timer = setInterval(function(){
-        type === 'right' ? buttonRightClick() : buttonLeftClick()
+        type === 'right' ? arrowRightClick() : arrowLeftClick()
     }, tempo);
 };
 

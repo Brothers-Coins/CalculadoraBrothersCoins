@@ -1,6 +1,7 @@
 const valor250Tc = 52
 const valor25Tc = 6
-const tempo = 200
+const timeArrowClick = 200
+const timeToast = 2500
 let timer
 
 function getValueSlider() {
@@ -20,32 +21,10 @@ function setMoneyValue(moneyValue) {
     document.getElementById('moneyValue').innerHTML = `R$ ${moneyValue},00`
 }
 
-function chooseTcImage(value) {
-    if (value < 200) {
-        return 1
-    } else if (value < 1000) {
-        return 2
-    } else if (value < 2500) {
-        return 3
-    } else if (value < 5000) {
-        return 4
-    } else if (value < 12000) {
-        return 5
-    }
-    return 6
-}
-
-function setImage(value) {
-    let tcImage
-    tcImage = chooseTcImage(value);
-    document.getElementById('tcImage').src = '../imgs/tcs/tibia-coins'+tcImage+'.png'
-}
-
 function setFields(value) {
     const moneyValue = getMoneyValue(value)
     setTcValue(value);
     setMoneyValue(moneyValue);
-    setImage(value)
     console.log(`Tc value: ${value}\nMoney value: ${moneyValue}`)
 }
 
@@ -54,7 +33,7 @@ function rangeSlide() {
     setFields(valueSlider);
 }
 
-function buttonLeftClick() {
+function arrowLeftClick() {
     let value = getValueSlider() - 25
     if (value < 25) {
         value = '25'
@@ -62,7 +41,7 @@ function buttonLeftClick() {
     setFields(value)
 }
 
-function buttonRightClick() {
+function arrowRightClick() {
     let value = getValueSlider() + 25
     if (value > 15000) {
         value = '15000'
@@ -70,13 +49,43 @@ function buttonRightClick() {
     setFields(value)
 }
 
-
 const mouseDown = (type) => {
     timer = setInterval(function(){
-        type === 'right' ? buttonRightClick() : buttonLeftClick()
-    }, tempo);
+        type === 'right' ? arrowRightClick() : arrowLeftClick()
+    }, timeArrowClick);
 };
 
 const mouseUp = () => {
     clearTimeout(timer);
 };
+
+const Toast = {
+    init() {
+        this.hideTimeout = null
+        this.el = document.createElement('div')
+        this.el.className = 'toast'
+        document.body.appendChild(this.el)
+    },
+
+    show(message) {
+        clearTimeout(this.hideTimeout)
+        this.el.textContent = message
+        this.el.className = 'toast toast-visible toast-success'
+        this.hideTimeout = setTimeout(() => {
+            this.el.classList.remove('toast-visible')
+        }, timeToast)
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => Toast.init())
+
+function copyKey() {
+    let key = "6873a533-5f28-4347-936e-0133bedfc62f"
+    const element = document.createElement('textarea');
+    element.value = key;
+    document.body.appendChild(element);
+    element.select();
+    document.execCommand('copy');
+    document.body.removeChild(element);
+    Toast.show("Chave copiada PIX com sucesso")
+}

@@ -4,24 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/toast.css">
     <link rel="shortcut icon" href="../brother_coins_logo.png">
     <title>Calculadora Brothers Coins - COMPRAR</title>
 </head>
 <body>
     <div>
+        <p><strong>Passo 1:</strong> Informe a quantidade de Tibia Coins na Calculadora abaixo</p>
         <div id="tibiaCoinsValue">
             <span id="rangeValue" class="text">250 TC</span>
         </div>
         <div id="tibiaCoinsRanger">
-            <button id="buttonLeft" class="button" onmousedown="mouseDown('left')" onmouseup="mouseUp()" onclick="buttonLeftClick()"></button>
+            <button id="arrowLeft" class="arrow" onmousedown="mouseDown('left')" onmouseup="mouseUp()"
+                    onclick="arrowLeftClick()"></button>
             <label>
                 <input id="slider" type="range" class="range" value="250" min="25" max="15000"
                        step="25" onchange="rangeSlide()" oninput="rangeSlide()">
             </label>
-            <button id="buttonRight" class="button" onmousedown="mouseDown('right')" onmouseup="mouseUp()" onclick="buttonRightClick()"></button>
+            <button id="arrowRight" class="arrow" onmousedown="mouseDown('right')" onmouseup="mouseUp()"
+                    onclick="arrowRightClick()"></button>
         </div>
         <span id="moneyValue" class="text">R$ 52,00</span>
+        <p><strong>Passo 2:</strong> Realize o pagamento (informando na descrição do comprovante o nome do char e a quantidade de tibia coins comprados)<br>pela chave pix no <strong>QR CODE</strong> abaixo ou
+            <button class="button" onclick="copyKey()">Copiar Chave</button>
+        </p>
+        <img class="qr-pix-nubank" src="../images/qr-code-pix-150.png" alt="QR CODE PIX">
+        <p><strong>Passo 3:</strong> Aguarde as suas tibia coins.<br>Se quiser pode nos enviar uma mensagem por whatsapp avisando da compra que a
+            <strong>entrega será feita instantaneamente</strong>!
+        </p>
     </div>
+
     <script src="../src/comprar.js"></script>
 </body>
 </html>

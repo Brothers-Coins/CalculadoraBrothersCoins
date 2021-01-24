@@ -62,3 +62,26 @@ div {
     height: 15px;
     border-radius: 50%;
 }
+
+p {
+    color: var(--info-text);
+}
+
+.button {
+    padding: 5px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    color: var(--info-text);
+    background-color: var(--roxo_bc);
+    outline: none;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.qr-pix-nubank {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
