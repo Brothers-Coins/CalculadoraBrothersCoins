@@ -20,7 +20,7 @@
 }
 
 .toast-visible {
-    bottom: 80px;
+    bottom: 45px;
     opacity: 1;
     visibility: visible;
 }

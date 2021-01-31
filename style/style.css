@@ -16,6 +16,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #151515;
+    overflow: hidden;
 }
 
 div {
@@ -23,7 +24,23 @@ div {
     text-align: center;
 }
 
+body, html {
+    height: 100%;
+}
+
+div.wrap {
+    height: 100%;
+    overflow: hidden;
+}
+
+#moneyValue {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 #tibiaCoinsValue {
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -68,9 +85,6 @@ p {
 }
 
 .button {
-    padding: 5px;
-    margin-left: 10px;
-    margin-top: 5px;
     border-radius: 5px;
     color: var(--info-text);
     background-color: var(--roxo_bc);
@@ -79,9 +93,29 @@ p {
 
 .button:hover {
     cursor: pointer;
+    background-color: var(--roxo_roxo);
 }
 
 .qr-pix-nubank {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+#content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.green-link {
+    color: var(--green2);
+    text-decoration: none;
+}
+
+.green-link:hover {
+    text-decoration: underline;
+    color: var(--green1);
+}
+
+.passo3-venda, .button-venda {
+    margin-top: 15px;
 }

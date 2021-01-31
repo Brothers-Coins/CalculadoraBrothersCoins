@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/toast.css">
     <link rel="shortcut icon" href="../brother_coins_logo.png">
-    <title>Calculadora Brothers Coins - VENDER</title>
+    <title>Calculadora Brothers Coins - COMPRAR</title>
 </head>
 <body>
     <div id="content">
@@ -25,17 +25,19 @@
             <button id="arrowRight" class="arrow" onmousedown="mouseDown('right')" onmouseup="mouseUp()"
                     onclick="arrowRightClick()"></button>
         </div>
-        <span id="moneyValue" class="text">R$ 47,50</span>
-        <p class="info"><strong>Passo 2:</strong> Se interessou pelo preço? Separe uma foto <strong>ATUAL</strong> do histórico de<br>transações do personagem que irá enviar as tibia coins.
+        <span id="moneyValue" class="text">R$ 51,00</span>
+        <p class="info"><strong>Passo 2:</strong> Realize o pagamento (informando na descrição do comprovante o nome do char e a<br>quantidade de tibia coins comprados) pelo
+            <a class="green-link" href="https://www.picpay.com/site" target="_blank">PicPay</a> no <strong>QR CODE</strong> abaixo ou
+            <button class="button" onclick="copyKey(`CARD`)">Copiar nome de usuário</button>
         </p>
-        <p class = "info passo3-venda"><strong>Passo 3:</strong> Nos envie a foto do histórico pelo whatsapp informando a quantidade de<br>tibia coins que deseja vender.
-            Iremos dar as demais instruções durante a conversa.
+        <img class="qr-pix-nubank" src="../images/qr-code-picpay-150.jpg" alt="QR CODE PIX">
+        <p class = "info"><strong>Passo 3:</strong> Aguarde as suas tibia coins. Se quiser pode nos <a class="green-link"
+                href="https://api.whatsapp.com/message/YAE7QHQXT4TTB1" target="_blank">enviar uma
+            mensagem<br> por whatsapp</a> avisando da compra que a
+            <strong>entrega será feita instantaneamente</strong>!
         </p>
-        <a href="https://api.whatsapp.com/message/JLP45IGQVRELF1" target="_blank">
-            <button class="button button-venda">Chamar no Whatsapp.</button>
-        </a>
     </div>
 
-    <script src="../src/vender.js"></script>
+    <script src="../src/comprar.js"></script>
 </body>
 </html>

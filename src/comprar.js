@@ -1,4 +1,4 @@
-const valor250Tc = 52
+const valor250Tc = 51
 const valor25Tc = 6
 const timeArrowClick = 200
 const timeToast = 2500
@@ -79,13 +79,14 @@ const Toast = {
 
 document.addEventListener('DOMContentLoaded', () => Toast.init())
 
-function copyKey() {
-    let key = "6873a533-5f28-4347-936e-0133bedfc62f"
+function copyKey(typeKey) {
+    let pixKey = "6873a533-5f28-4347-936e-0133bedfc62f"
+    let userNamePicPay = "@alexvfilho"
     const element = document.createElement('textarea');
-    element.value = key;
+    element.value = typeKey === `PIX` ? pixKey : userNamePicPay;
     document.body.appendChild(element);
     element.select();
     document.execCommand('copy');
     document.body.removeChild(element);
-    Toast.show("Chave copiada PIX com sucesso")
+    Toast.show(typeKey === `PIX` ? `Chave PIX copiada com sucesso` : `Nome de usuário copiado com sucesso`)
 }
