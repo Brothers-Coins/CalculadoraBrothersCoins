@@ -1,4 +1,4 @@
-const valor250Tc = 47.5
+const valor250Tc = 47
 const valor25Tc = 4
 const tempo = 200
 let timer

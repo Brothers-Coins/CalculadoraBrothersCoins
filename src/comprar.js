@@ -1,4 +1,4 @@
-const valor250Tc = 51
+const valor250Tc = 52
 const valor25Tc = 6
 const timeArrowClick = 200
 const timeToast = 2500
@@ -9,7 +9,7 @@ function getValueSlider() {
 }
 
 function getMoneyValue(value) {
-    return valor250Tc * Math.floor(value / 250) + valor25Tc * Math.floor((value % 250) / 25)
+    return ((value + 25) % 250) === 0 ? valor250Tc * Math.floor((value + 25) / 250) - 1 : valor250Tc * Math.floor(value / 250) + valor25Tc * Math.floor((value % 250) / 25)
 }
 
 function setTcValue(valueSlider) {
@@ -50,7 +50,7 @@ function arrowRightClick() {
 }
 
 const mouseDown = (type) => {
-    timer = setInterval(function(){
+    timer = setInterval(function () {
         type === 'right' ? arrowRightClick() : arrowLeftClick()
     }, timeArrowClick);
 };

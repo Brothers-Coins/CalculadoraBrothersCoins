@@ -96,7 +96,7 @@ p {
     background-color: var(--roxo_roxo);
 }
 
-.qr-pix-nubank {
+.qr-pix {
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -116,6 +116,6 @@ p {
     color: var(--green1);
 }
 
-.passo3-venda, .button-venda {
+.passo3-venda, .button-venda, .obs {
     margin-top: 15px;
 }
