@@ -2,7 +2,12 @@ const valor250Tc = 52
 const valor25Tc = 6
 const timeArrowClick = 200
 const timeToast = 2500
+let moneyValue = 52.00;
 let timer
+const alexUserName = "alexvilho"
+const alexPixKey = "6873a533-5f28-4347-936e-0133bedfc62f"
+const pierreUserName = "pierrevieira"
+const pierrePixKey = "e948646f-2da8-4596-90a0-2e54fefaf218"
 
 function getValueSlider() {
     return parseInt(document.getElementById('slider').value, 10)
@@ -17,12 +22,12 @@ function setTcValue(valueSlider) {
     document.getElementById('slider').value = valueSlider
 }
 
-function setMoneyValue(moneyValue) {
+function setMoneyValue() {
     document.getElementById('moneyValue').innerHTML = `R$ ${moneyValue},00`
 }
 
 function setFields(value) {
-    const moneyValue = getMoneyValue(value)
+    moneyValue = getMoneyValue(value)
     setTcValue(value);
     setMoneyValue(moneyValue);
     console.log(`Tc value: ${value}\nMoney value: ${moneyValue}`)
@@ -79,14 +84,26 @@ const Toast = {
 
 document.addEventListener('DOMContentLoaded', () => Toast.init())
 
-function copyKey(typeKey) {
-    let pixKey = "6873a533-5f28-4347-936e-0133bedfc62f"
-    let userNamePicPay = "@alexvfilho"
+function getByHours(type) {
+    const hours = new Date().getHours()
+    if (hours >= 7 && hours <= 14) {
+        return type === "PIX" ? pierrePixKey : pierreUserName
+    }
+    return type === "PIX" ? alexPixKey : alexUserName
+}
+
+function copyPixKey() {
+    const pixKey = getByHours("pix")
     const element = document.createElement('textarea');
-    element.value = typeKey === `PIX` ? pixKey : userNamePicPay;
+    element.value = pixKey;
     document.body.appendChild(element);
     element.select();
     document.execCommand('copy');
     document.body.removeChild(element);
-    Toast.show(typeKey === `PIX` ? `Chave PIX copiada com sucesso` : `Nome de usuário copiado com sucesso`)
+    Toast.show(`Chave PIX copiada com sucesso`)
+}
+
+function openPicPayToPay() {
+    const userName = getByHours("username")
+    window.open(`https://picpay.me/${userName}/` + moneyValue.toFixed(1))
 }
