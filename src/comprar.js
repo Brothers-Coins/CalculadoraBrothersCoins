@@ -6,8 +6,6 @@ let moneyValue = 52.00;
 let timer
 const alexUserName = "alexvilho"
 const alexPixKey = "6873a533-5f28-4347-936e-0133bedfc62f"
-const pierreUserName = "pierrevieira"
-const pierrePixKey = "e948646f-2da8-4596-90a0-2e54fefaf218"
 
 function getValueSlider() {
     return parseInt(document.getElementById('slider').value, 10)
@@ -84,16 +82,8 @@ const Toast = {
 
 document.addEventListener('DOMContentLoaded', () => Toast.init())
 
-function getByHours(type) {
-    const hours = new Date().getHours()
-    if (hours >= 7 && hours <= 14) {
-        return type === "PIX" ? pierrePixKey : pierreUserName
-    }
-    return type === "PIX" ? alexPixKey : alexUserName
-}
-
 function copyPixKey() {
-    const pixKey = getByHours("pix")
+    const pixKey = alexPixKey
     const element = document.createElement('textarea');
     element.value = pixKey;
     document.body.appendChild(element);
@@ -104,6 +94,5 @@ function copyPixKey() {
 }
 
 function openPicPayToPay() {
-    const userName = getByHours("username")
-    window.open(`https://picpay.me/${userName}/` + moneyValue.toFixed(1))
+    window.open(`https://picpay.me/${alexUserName}/` + moneyValue.toFixed(1))
 }
