@@ -4,8 +4,6 @@ const timeArrowClick = 200
 const timeToast = 2500
 let moneyValue = 52.00;
 let timer
-const alexUserName = "alexvilho"
-const alexPixKey = "6873a533-5f28-4347-936e-0133bedfc62f"
 
 function getValueSlider() {
     return parseInt(document.getElementById('slider').value, 10)
@@ -83,7 +81,7 @@ const Toast = {
 document.addEventListener('DOMContentLoaded', () => Toast.init())
 
 function copyPixKey() {
-    const pixKey = alexPixKey
+    const pixKey = "6873a533-5f28-4347-936e-0133bedfc62f"
     const element = document.createElement('textarea');
     element.value = pixKey;
     document.body.appendChild(element);
@@ -94,5 +92,5 @@ function copyPixKey() {
 }
 
 function openPicPayToPay() {
-    window.open(`https://picpay.me/${alexUserName}/` + moneyValue.toFixed(1))
+    window.open(`https://picpay.me/alexvfilho/` + moneyValue.toFixed(1))
 }
