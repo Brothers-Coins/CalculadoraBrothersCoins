@@ -1,8 +1,8 @@
-const valor250Tc = 52
-const valor25Tc = 6
+const valor250Tc = 54
+const valor25Tc = 6.5
 const timeArrowClick = 200
 const timeToast = 2500
-let moneyValue = 52.00
+let moneyValue = 54.00
 let timer
 
 function getValueSlider() {
@@ -19,7 +19,7 @@ function setTcValue(valueSlider) {
 }
 
 function setMoneyValue() {
-    document.getElementById('moneyValue').innerHTML = `R$ ${moneyValue},00`
+    document.getElementById('moneyValue').innerHTML = moneyValue - Math.trunc(moneyValue) !== 0.5 ? `R$ ${moneyValue},00` : `R$ ${moneyValue.toString().replace('.', ',')}0`
 }
 
 function setFields(value) {
