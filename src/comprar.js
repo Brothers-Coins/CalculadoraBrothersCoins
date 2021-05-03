@@ -1,8 +1,8 @@
-const valor250Tc = 54
+const valor250Tc = 54.5
 const valor25Tc = 6.5
 const timeArrowClick = 200
 const timeToast = 2500
-let moneyValue = 54.00
+let moneyValue = 54.5
 let timer
 
 function getValueSlider() {
