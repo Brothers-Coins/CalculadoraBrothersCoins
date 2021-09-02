@@ -1,16 +1,19 @@
-const valor250Tc = 54.5
-const valor25Tc = 6.5
+const valor250Tc = 55
+const valor25Tc = 7
 const timeArrowClick = 200
 const timeToast = 2500
 let moneyValue = 52
 let timer
+
+const pierrePixKey = "e948646f-2da8-4596-90a0-2e54fefaf218"
+const alexPixKey = "6873a533-5f28-4347-936e-0133bedfc62f"
 
 function getValueSlider() {
     return parseInt(document.getElementById('slider').value, 10)
 }
 
 function getMoneyValue(value) {
-    return ((value + 25) % 250) === 0 ? valor250Tc * Math.floor((value + 25) / 250) - 1 : valor250Tc * Math.floor(value / 250) + valor25Tc * Math.floor((value % 250) / 25)
+    return ((value + 25) % 250) === 0 ? valor250Tc * Math.floor((value + 25) / 250) - 0.5 : valor250Tc * Math.floor(value / 250) + valor25Tc * Math.floor((value % 250) / 25)
 }
 
 function setTcValue(valueSlider) {
@@ -44,8 +47,8 @@ function arrowLeftClick() {
 
 function arrowRightClick() {
     let value = getValueSlider() + 25
-    if (value > 15000) {
-        value = '15000'
+    if (value > 10000) {
+        value = '10000'
     }
     setFields(value)
 }
@@ -81,7 +84,7 @@ const Toast = {
 document.addEventListener('DOMContentLoaded', () => Toast.init())
 
 function copyPixKey() {
-    const pixKey = "e948646f-2da8-4596-90a0-2e54fefaf218"
+    const pixKey = alexPixKey
     const element = document.createElement('textarea');
     element.value = pixKey;
     document.body.appendChild(element);
@@ -92,5 +95,5 @@ function copyPixKey() {
 }
 
 function openPicPayToPay() {
-    window.open(`https://picpay.me/pierrevieira/` + moneyValue.toFixed(1))
+    window.open(`https://picpay.me/alexvfilho/` + moneyValue.toFixed(1))
 }

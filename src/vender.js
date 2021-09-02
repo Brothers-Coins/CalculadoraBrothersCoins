@@ -1,4 +1,4 @@
-const valor250Tc = 45
+const valor250Tc = 46
 const valor25Tc = 4
 const tempo = 200
 let timer
@@ -43,8 +43,8 @@ function arrowLeftClick() {
 
 function arrowRightClick() {
     let value = getValueSlider() + 25
-    if (value > 15000) {
-        value = '15000'
+    if (value > 10000) {
+        value = '10000'
     }
     setFields(value)
 }

@@ -99,6 +99,7 @@ p {
 .qr-pix {
     margin-top: 20px;
     margin-bottom: 20px;
+    width: 150px;
 }
 
 #content {
