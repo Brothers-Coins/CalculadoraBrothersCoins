@@ -1,8 +1,8 @@
-const valor250Tc = 55
-const valor25Tc = 7
+const valor250Tc = 51
+const valor25Tc = 6
 const timeArrowClick = 200
 const timeToast = 2500
-let moneyValue = 52
+let moneyValue = valor250Tc
 let timer
 
 const pierrePixKey = "e948646f-2da8-4596-90a0-2e54fefaf218"
