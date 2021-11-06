@@ -1,12 +1,12 @@
-const valor250Tc = 51
-const valor25Tc = 6
+const valor250Tc = 53
+const valor25Tc = 6.50
 const timeArrowClick = 200
 const timeToast = 2500
 let moneyValue = valor250Tc
 let timer
 
-const pierrePixKey = "e948646f-2da8-4596-90a0-2e54fefaf218"
-const alexPixKey = "6873a533-5f28-4347-936e-0133bedfc62f"
+const pierrePixKey = 'e948646f-2da8-4596-90a0-2e54fefaf218'
+const alexPixKey = '6873a533-5f28-4347-936e-0133bedfc62f'
 
 function getValueSlider() {
     return parseInt(document.getElementById('slider').value, 10)
@@ -21,20 +21,40 @@ function setTcValue(valueSlider) {
     document.getElementById('slider').value = valueSlider
 }
 
+function numbersOfCharsDecimal(textMoneyValue) {
+    let count = 0
+    const commaPosition = textMoneyValue.indexOf(',')
+    for (let i = commaPosition + 1; i < textMoneyValue.length; i++) {
+        count++;
+    }
+    return count
+}
+
+function getTextFromMoneyValue() {
+    if (moneyValue % 1 === 0) {
+        return `R$ ${moneyValue},00`
+    }
+    let textMoneyValue = `R$ ${moneyValue.toString().replace('.', ',')}`
+    if (numbersOfCharsDecimal(textMoneyValue) < 2) {
+        textMoneyValue += '0'
+    }
+    return textMoneyValue
+}
+
 function setMoneyValue() {
-    document.getElementById('moneyValue').innerHTML = moneyValue - Math.trunc(moneyValue) !== 0.5 ? `R$ ${moneyValue},00` : `R$ ${moneyValue.toString().replace('.', ',')}0`
+    document.getElementById('moneyValue').innerHTML = getTextFromMoneyValue()
 }
 
 function setFields(value) {
     moneyValue = getMoneyValue(value)
-    setTcValue(value);
-    setMoneyValue(moneyValue);
+    setTcValue(value)
+    setMoneyValue(moneyValue)
     console.log(`Tc value: ${value}\nMoney value: ${moneyValue}`)
 }
 
 function rangeSlide() {
     const valueSlider = getValueSlider()
-    setFields(valueSlider);
+    setFields(valueSlider)
 }
 
 function arrowLeftClick() {
@@ -56,12 +76,12 @@ function arrowRightClick() {
 const mouseDown = (type) => {
     timer = setInterval(function () {
         type === 'right' ? arrowRightClick() : arrowLeftClick()
-    }, timeArrowClick);
-};
+    }, timeArrowClick)
+}
 
 const mouseUp = () => {
-    clearTimeout(timer);
-};
+    clearTimeout(timer)
+}
 
 const Toast = {
     init() {
@@ -85,12 +105,12 @@ document.addEventListener('DOMContentLoaded', () => Toast.init())
 
 function copyPixKey() {
     const pixKey = alexPixKey
-    const element = document.createElement('textarea');
-    element.value = pixKey;
-    document.body.appendChild(element);
-    element.select();
-    document.execCommand('copy');
-    document.body.removeChild(element);
+    const element = document.createElement('textarea')
+    element.value = pixKey
+    document.body.appendChild(element)
+    element.select()
+    document.execCommand('copy')
+    document.body.removeChild(element)
     Toast.show(`Chave PIX copiada com sucesso`)
 }
 
